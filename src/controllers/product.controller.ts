@@ -28,7 +28,7 @@ export class ProductController {
   @Post()
   @HttpCode(204)
   async createProduct(@Body() product: Product) {
-    return this.productService.createProduct(product);
+    await this.productService.createProduct(product);
   }
 
   @Put(':id')
@@ -42,6 +42,6 @@ export class ProductController {
   @Delete(':id')
   @HttpCode(204)
   async destroyProduct(@Param() params) {
-    return this.productService.destroyProduct(params.id);
+    await this.productService.destroyProduct(params.id);
   }
 }
